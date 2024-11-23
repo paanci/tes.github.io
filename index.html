@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komikcast</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        $(document).ready(function () {
+            $('#overlay').hide(); // Sembunyikan overlay saat halaman dimuat
+        });
+    </script>
+</head>
+<body>
+    <h1>Daftar Manga</h1>
+    <button id="fetchButton" onclick="window.location.href='manga-list.html?page=1'">Terbaru</button>
+    <button id="link" onclick="window.location.href='http://cors-anywhere.herokuapp.com/corsdemo'">Claim Demo</button>
+    <div id="mangaList"></div>
+    <button id="nextPageButton" style="display: none;">Next</button>
+
+    <div id="overlay">
+        <img class="svg" src="http://tachiyomi.wap.sh/icon/overlay.svg">
+        <div id="errorMessage">
+            <button onclick="$('#overlay').hide()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        $('#fetchButton').on('click', function () {
+            console.log('Tombol Terbaru diklik');
+            $('#mangaList').empty();
+            $('#overlay').hide();
+            window.location.href = "manga-list.html"; // Mengalihkan ke halaman manga-list.html
+        });
+    </script>
+</body>
+</html>
